@@ -1,0 +1,118 @@
+﻿{
+  "$schema": "config.schema.json",
+  "UpdateProviders": [ ],
+  "AddressLookupSettings": {
+    "MinimumAgreeingProviderCount": 100,
+    "MinimumAgreeingProviderPercentage": 90,
+    "MinimumAgreeingEncryptedProviderCount": 2,
+    "MinimumAgreeingEncryptedProviderPercentage": 100,
+    "RandomizeProviderOrder": true
+  },
+  "AddressProviders": [
+    // Perhaps add DNS resolver providers? myip.opendns.com using resolver1.opendns.com and . using ifcfg.me
+    // Also: benchmarks at http://unix.stackexchange.com/a/194136/153024
+
+    // Regex examples for reference
+    /* {
+      "ProviderType": "CoreDDC.PublicIPAddressProviders.RegexIPAddressProvider",
+      "Url": "https://duckduckgo.com/?q=ip",
+      "Pattern": "(?<=Your IP address is )\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}"
+    },
+    {
+      "ProviderType": "CoreDDC.PublicIPAddressProviders.RegexIPAddressProvider",
+      "Url": "https://www.google.com/search?q=ip+address",
+      "Pattern": "\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}(?=.*Your public IP address)"
+    },
+    {
+      "ProviderType": "CoreDDC.PublicIPAddressProviders.RegexIPAddressProvider",
+      "Url": "https://ifconfig.co/x-real-ip.json",
+      "Pattern": "\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}"
+    } */
+
+
+    {
+      "ProviderType": "CoreDDC.PublicIPAddressProviders.HttpGetIPAddressProvider",
+      "Url": "https://icanhazip.com/"
+    },
+    {
+      "ProviderType": "CoreDDC.PublicIPAddressProviders.HttpGetIPAddressProvider",
+      "Url": "http://ifconfig.me/ip"
+    },
+    {
+      "ProviderType": "CoreDDC.PublicIPAddressProviders.HttpGetIPAddressProvider",
+      "Url": "http://ipecho.net/plain"
+    },
+    {
+      "ProviderType": "CoreDDC.PublicIPAddressProviders.HttpGetIPAddressProvider",
+      "Url": "https://wtfismyip.com/text"
+    },
+    {
+      "ProviderType": "CoreDDC.PublicIPAddressProviders.HttpGetIPAddressProvider",
+      "Url": "http://checkip.amazonaws.com/"
+    },
+    {
+      "ProviderType": "CoreDDC.PublicIPAddressProviders.HttpGetIPAddressProvider",
+      "Url": "https://ipinfo.io/ip"
+    },
+    {
+      "ProviderType": "CoreDDC.PublicIPAddressProviders.HttpGetIPAddressProvider",
+      "Url": "https://api.ipify.org/"
+    },
+    {
+      "ProviderType": "CoreDDC.PublicIPAddressProviders.HttpGetIPAddressProvider",
+      "Url": "https://myexternalip.com/raw"
+    },
+    {
+      "ProviderType": "CoreDDC.PublicIPAddressProviders.HttpGetIPAddressProvider",
+      "Url": "https://ip.appspot.com/"
+    },
+    {
+      "ProviderType": "CoreDDC.PublicIPAddressProviders.HttpGetIPAddressProvider",
+      "Url": "http://whatismyip.akamai.com/"
+    },
+    {
+      "ProviderType": "CoreDDC.PublicIPAddressProviders.HttpGetIPAddressProvider",
+      "Url": "https://4.ifcfg.me/ip"
+    },
+    {
+      "ProviderType": "CoreDDC.PublicIPAddressProviders.HttpGetIPAddressProvider",
+      "Url": "http://ip.dnsexit.com"
+    },
+    {
+      "ProviderType": "CoreDDC.PublicIPAddressProviders.HttpGetIPAddressProvider",
+      "Url": "http://ident.me/"
+    },
+    {
+      "ProviderType": "CoreDDC.PublicIPAddressProviders.HttpGetIPAddressProvider",
+      "Url": "http://tnx.nl/ip"
+    },
+    {
+      "ProviderType": "CoreDDC.PublicIPAddressProviders.HttpGetIPAddressProvider",
+      "Url": "https://l2.io/ip"
+    },
+    {
+      "ProviderType": "CoreDDC.PublicIPAddressProviders.HttpGetIPAddressProvider",
+      "Url": "https://ipof.in/txt"
+    },
+    {
+      "ProviderType": "CoreDDC.PublicIPAddressProviders.HttpGetIPAddressProvider",
+      "Url": "https://ip.tyk.nu/"
+    },
+    {
+      "ProviderType": "CoreDDC.PublicIPAddressProviders.HttpGetIPAddressProvider",
+      "Url": "http://eth0.me/"
+    },
+    {
+      "ProviderType": "CoreDDC.PublicIPAddressProviders.HttpGetIPAddressProvider",
+      "Url": "http://wgetip.com/"
+    },
+    {
+      "ProviderType": "CoreDDC.PublicIPAddressProviders.HttpGetIPAddressProvider",
+      "Url": "http://bot.whatismyipaddress.com/"
+    },
+    {
+      "ProviderType": "CoreDDC.PublicIPAddressProviders.HttpGetIPAddressProvider",
+      "Url": "http://ip.dnsexit.com/"
+    }
+  ]
+}

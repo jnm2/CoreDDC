@@ -1,0 +1,74 @@
+﻿{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "definitions": {
+    "typeName": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "type": "object",
+  "properties": {
+    "$schema": { "type": "string" },
+    "AddressLookupSettings": {
+      "type": "object",
+      "properties": {
+        "MinimumAgreeingProviderCount": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "MinimumAgreeingProviderPercentage": {
+          "type": "number",
+          "minimum": 50,
+          "exclusiveMinimum": true,
+          "maximum": 100
+        },
+        "MinimumAgreeingEncryptedProviderCount": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "MinimumAgreeingEncryptedProviderPercentage": {
+          "type": "number",
+          "minimum": 50,
+          "exclusiveMinimum": true,
+          "maximum": 100
+        },
+        "RandomizeProviderOrder": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "AddressProviders": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "ProviderType": { "$ref": "#/definitions/typeName" },
+          "Url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "Pattern": { "type": "string" }
+        },
+        "required": [ "ProviderType" ]
+      }
+    },
+    "UpdateProviders": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "ProviderType": { "$ref": "#/definitions/typeName" },
+          "UpdateOnlyIfAddressChanges": { "type": "boolean" },
+          "UpdateUrl": {
+            "type": "string",
+            "format": "uri"
+          },
+          "Host": { "type": "string" },
+          "Domain": { "type": "string" },
+          "Password": { "type": "string" }
+        },
+        "required": [ "ProviderType" ]
+      }
+    }
+  },
+  "additionalProperties": false
+}
